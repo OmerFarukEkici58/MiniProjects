@@ -29,10 +29,10 @@ public class AracSigortaApplication {
 
     }
 
-    public static void start(){
+    public static void start() {
 
         //2.kullanıcıdan bilgi alma
-        Scanner inp=new Scanner(System.in);
+        Scanner inp = new Scanner(System.in);
         boolean isAgain;
 
         //3.tekrar tekrar menü gösterilsin
@@ -41,46 +41,46 @@ public class AracSigortaApplication {
             System.out.println("Tarife dönemi  seçiniz: ");
             System.out.println("1. Haziran 2023");
             System.out.println("2. Aralık 2023");
-            int term=inp.nextInt();
-            String termName=term==1 ? "Haziran 2023" : "Aralık 2023";
+            int term = inp.nextInt();
+            String termName = term == 1 ? "Haziran 2023" : "Aralık 2023";
 
             int select;
             //tarife dönemi doğru girilirse işleme devam et hatalı ise uyarı mesajı ver yeniden form göster
-            if (term==1 || term==2){
+            if (term == 1 || term == 2) {
                 //4.arac objesi oluşturalım
-                Arac arac=new Arac();//default
+                Arac arac = new Arac();//default
                 System.out.println("Araç tipini giriniz :");
                 System.out.println("otomobil, kamyon, otobüs, motosiklet");
-                arac.type=inp.next();//kamyon
+                arac.type = inp.next();//kamyon
                 arac.countPrim(term);//prim set edildi
                 //prim=0 ise hatalı giriş yeni işlem seçeneği
                 //prim>0 ise hesaplama başarılı , sonucu görüntüle
-                if(arac.prim>0){
+                if (arac.prim > 0) {
                     System.out.println("---------------------------------");
-                    System.out.println("Araç tipi : "+arac.type);
-                    System.out.println("Tarife dönemi : "+termName);
-                    System.out.println("Aracınızın ilgili dönem sigorta primi : "+arac.prim);
+                    System.out.println("Araç tipi : " + arac.type);
+                    System.out.println("Tarife dönemi : " + termName);
+                    System.out.println("Aracınızın ilgili dönem sigorta primi : " + arac.prim);
                     System.out.println("---------------------------------");
 
                     System.out.println("Yeni işlem için 1, ÇIKIŞ için 0 seçiniz : ");
-                    select=inp.nextInt();
+                    select = inp.nextInt();
 
-                    isAgain=select==1 ? true : false;
+                    isAgain = select == 1 ? true : false;
 
-                }else{
+                } else {
                     System.out.println("Hesaplama başarısız, tekrar deneyiniz.");
                     System.out.println("Yeni işlem için 1, ÇIKIŞ için 0 seçiniz : ");
-                    select=inp.nextInt();
+                    select = inp.nextInt();
 
-                    isAgain=select==1 ? true : false;
+                    isAgain = select == 1 ? true : false;
                 }
 
-            }else{//hatalı girişte
+            } else {//hatalı girişte
                 System.out.println("Hatalı giriş!");
-                isAgain=true;
+                isAgain = true;
             }
 
-        }while (isAgain);
+        } while (isAgain);
 
         System.out.println("İyi günler dileriz...");
 
