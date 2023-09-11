@@ -48,6 +48,8 @@ public class Ticket {
         this.price=total;//56
     }
 
+
+
     //6-bileti yazdıralım
     public void printTicket(Bus bus){
         System.out.println("*".repeat(42));
@@ -60,6 +62,14 @@ public class Ticket {
         System.out.println("Keyifli yolculuklar dileriz...");
         System.out.println("*".repeat(42));
 
+
     }
+
+
+
+
+
+
+
 
 }
