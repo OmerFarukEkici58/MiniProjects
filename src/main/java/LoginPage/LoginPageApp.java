@@ -52,14 +52,18 @@ public class LoginPageApp {
             System.out.println("2- giriş yap");
             System.out.println("0- ÇIKIŞ");
             System.out.println("Seçiminiz : ");
-            select=inp.nextInt();
+            select=inp.nextInt();// \n
+            inp.nextLine();
 
             switch (select){
                 case 1:
                     service.register();
+                    //test: için userları görelim
+                    System.out.println(service.emails);
+                    System.out.println(service.passwords);
                     break;
                 case 2:
-                    //service.login();
+                    service.login();
                     break;
                 case 0:
                     System.out.println("İyi günler dileriz...");
